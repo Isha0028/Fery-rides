@@ -13,7 +13,6 @@ const hashedPassword= await bcrypt.hash(password,salt);
     return res.status(400).json({message: "Username and password are required"});
   }
   
-
   try {
     const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
